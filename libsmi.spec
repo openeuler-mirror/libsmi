@@ -1,10 +1,10 @@
 Name:           libsmi
 Version:        0.4.8
-Release:        24
+Release:        25
 Summary:        A library to access SMI MIB information
 License:        GPLv2+ and BSD
 URL:            http://www.ibr.cs.tu-bs.de/projects/libsmi/index.html
-Source0:        ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/%{name}-%{version}.tar.gz
+Source0:        https://www.ibr.cs.tu-bs.de/projects/libsmi/download/%{name}-%{version}.tar.gz
 Source1:        smi.conf
 Source2:	    IETF-MIB-LICENSE.txt
 Patch0:		    libsmi-0.4.8-wget111.patch
@@ -80,5 +80,8 @@ make check ||:
 %{_mandir}/man3/*.3*
 
 %changelog
+* Tue Sep 15 2020 Ge Wang <wangge20@huawei.com> - 0.4.8-25
+- Modify Source0 Url
+
 * Tue Nov 19 2019 mengxian <mengxian@huawei.com> - 0.4.8-24
 - Package init
