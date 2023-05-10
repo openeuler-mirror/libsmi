@@ -1,6 +1,6 @@
 Name:           libsmi
 Version:        0.4.8
-Release:        25
+Release:        26
 Summary:        A library to access SMI MIB information
 License:        GPLv2+ and BSD
 URL:            http://www.ibr.cs.tu-bs.de/projects/libsmi/index.html
@@ -40,6 +40,7 @@ libsmi-based applications.
 cp %{SOURCE2} .
 
 %build
+CFLAGS="$CFLAGS -Wno-int-conversion"; export CFLAGS
 %configure --enable-smi --enable-sming --enable-shared --disable-static
 %make_build LIBTOOL=/usr/bin/libtool
 
@@ -80,6 +81,9 @@ make check ||:
 %{_mandir}/man3/*.3*
 
 %changelog
+* Wed May 10 2023 Xiaoya Huang <huangxiaoya@iscas.ac.cn> - 0.4.8-26
+- Fix clang building errors
+
 * Tue Sep 15 2020 Ge Wang <wangge20@huawei.com> - 0.4.8-25
 - Modify Source0 Url
 
